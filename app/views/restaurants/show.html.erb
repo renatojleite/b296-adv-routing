@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @restaurant.name %>
+  <%= @restaurant.name %> - <%= link_to 'See chef', chef_restaurant_path(@restaurant) %>
 </p>
 
 <p>

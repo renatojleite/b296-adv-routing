@@ -1,13 +1,23 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_restaurant, only: [:show, :chef, :edit, :update, :destroy]
 
   # GET /restaurants
   def index
     @restaurants = Restaurant.all
   end
 
+  # GET /restaurants/top
+  def top
+    @restaurants = Restaurant.where(stars: 5)
+  end
+
   # GET /restaurants/1
   def show
+  end
+
+  # GET /restaurants/1/chef
+  def chef
+    @chef = @restaurant.chef
   end
 
   # GET /restaurants/new
